@@ -29,7 +29,7 @@ export default function Experiences() {
       <header className="container mx-auto relative z-10 px-6 py-8">
         <Link 
           href="/" 
-          className="inline-flex items-center gap-2 text-[#00ffea] hover:text-white transition-colors font-medium"
+          className="inline-flex items-center gap-2 text-[#00ffea] hover:text-white transition-all duration-300 font-medium hover:-translate-y-1 hover:scale-105"
         >
           <ArrowLeft size={20} />
           Kembali ke Home
@@ -64,7 +64,6 @@ export default function Experiences() {
         </div>
       </section>
 
-
       {/* educations */}
       <section className="container mx-auto relative z-10 px-6 py-16">
         <div className="grid grid-cols-12 gap-8">
@@ -72,7 +71,7 @@ export default function Experiences() {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center">Educations</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-[#1a1f20] p-6 md:p-8 rounded-lg border border-[#414a4c] hover:border-[#00ffea]/50 transition-colors">
+              <div className="bg-[#1a1f20] p-6 md:p-8 rounded-lg border border-[#414a4c] transition-all duration-300 hover:border-[#00ffea]/50 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:shadow-[#00ffea]/10">
                 <h3 className="text-xl md:text-2xl font-bold text-[#00ffea] mb-2">SMAN 1 Kota Serang</h3>
                 <h4 className="text-lg text-white mb-2">Jurusan MIPA</h4>
                 <p className="text-gray-400 mb-4">2022 - 2025</p>
@@ -81,7 +80,7 @@ export default function Experiences() {
                 </p>
               </div>
               
-              <div className="bg-[#1a1f20] p-6 md:p-8 rounded-lg border border-[#414a4c] hover:border-[#00ffea]/50 transition-colors">
+              <div className="bg-[#1a1f20] p-6 md:p-8 rounded-lg border border-[#414a4c] transition-all duration-300 hover:border-[#00ffea]/50 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:shadow-[#00ffea]/10">
                 <h3 className="text-xl md:text-2xl font-bold text-[#00ffea] mb-2">UNESA</h3>
                 <h4 className="text-lg text-white mb-2">S1 Sains Data</h4>
                 <p className="text-gray-400 mb-4">2025 - 2029 (cumlaude hopefully)</p>
@@ -101,7 +100,7 @@ export default function Experiences() {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center">Personal Projects</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-gradient-to-r from-[#1a1f20] to-[#252b2c] p-6 rounded-lg border border-[#414a4c] hover:border-[#00ffea]/50 transition-all duration-300">
+            <div className="bg-gradient-to-r from-[#1a1f20] to-[#252b2c] p-6 rounded-lg border border-[#414a4c] transition-all duration-300 hover:border-[#00ffea]/50 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:shadow-[#00ffea]/10">
               <h3 className="text-xl font-bold text-[#00ffea] mb-3">Roblox Game Developer</h3>
               <p className="text-gray-400 text-sm mb-3">2020 - Present</p>
               <p className="text-gray-300 mb-4">
@@ -112,7 +111,7 @@ export default function Experiences() {
               </div>
             </div>
     
-            <div className="bg-gradient-to-r from-[#1a1f20] to-[#252b2c] p-6 rounded-lg border border-[#414a4c] hover:border-[#00ffea]/50 transition-all duration-300">
+            <div className="bg-gradient-to-r from-[#1a1f20] to-[#252b2c] p-6 rounded-lg border border-[#414a4c] transition-all duration-300 hover:border-[#00ffea]/50 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:shadow-[#00ffea]/10">
               <h3 className="text-xl font-bold text-[#00ffea] mb-3">This Portofolio</h3>
               <p className="text-gray-400 text-sm mb-3">2025</p>
               <p className="text-gray-300 mb-4">
@@ -138,10 +137,10 @@ export default function Experiences() {
             Meskipun experience saya belum banyak, saya selalu semangat buat belajar hal baru dan ngerjain project seru. Jangan ragu buat reach out ya!
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
-            <Link href="/#contact" className="bg-[#00ffea] text-[#0e1111] px-8 py-3 rounded-lg font-bold text-lg hover:bg-white transition-colors">
+            <Link href="/#contact" className="bg-[#00ffea] text-[#0e1111] px-8 py-3 rounded-lg font-bold text-lg transition-all duration-300 hover:bg-white hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:shadow-[#00ffea]/25">
               Get in Touch
             </Link>
-            <Link href="/#projects" className="border-2 border-[#00ffea] text-[#00ffea] px-8 py-3 rounded-lg font-bold text-lg hover:bg-[#00ffea] hover:text-[#0e1111] transition-colors">
+            <Link href="/#projects" className="border-2 border-[#00ffea] text-[#00ffea] px-8 py-3 rounded-lg font-bold text-lg transition-all duration-300 hover:bg-[#00ffea] hover:text-[#0e1111] hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:shadow-[#00ffea]/25">
               View Projects
             </Link>
           </div>

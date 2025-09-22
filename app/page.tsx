@@ -53,7 +53,7 @@ export default function Home() {
             {/* Close Button */}
             <button
               onClick={closeModal}
-              className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+              className="absolute top-4 right-4 text-gray-400 hover:text-white transition-all duration-300 hover:-translate-y-1 hover:scale-110"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -70,7 +70,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">Get In Touch!</h3>
                 <p className="text-gray-300 text-sm mb-6">
-                  Halo! Gmail gw bisa langsung di copy ya, kalo mau tanya-tanya bisa ke situ aja!
+                  Halo! Alamat email saya bisa langsung di copy ya, kalo mau tanya-tanya bisa ke situ aja!
                 </p>
               </div>
 
@@ -82,10 +82,10 @@ export default function Home() {
                   </span>
                   <button
                     onClick={handleCopyEmail}
-                    className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 ${
+                    className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 flex items-center gap-2 hover:-translate-y-1 hover:scale-105 ${
                       copySuccess 
-                        ? 'bg-green-500 text-white' 
-                        : 'bg-[#00ffea] hover:bg-[#00b8d4] text-[#0e1111] hover:scale-105'
+                        ? 'bg-green-500 text-white hover:bg-green-400' 
+                        : 'bg-[#00ffea] hover:bg-[#00b8d4] text-[#0e1111] hover:shadow-lg hover:shadow-[#00ffea]/25'
                     }`}
                   >
                     {copySuccess ? (
@@ -110,13 +110,13 @@ export default function Home() {
               <div className="flex gap-3">
                 <button
                   onClick={closeModal}
-                  className="flex-1 px-4 py-2 border border-[#414a4c] text-gray-300 rounded-lg hover:bg-[#414a4c] transition-colors"
+                  className="flex-1 px-4 py-2 border border-[#414a4c] text-gray-300 rounded-lg transition-all duration-300 hover:bg-[#414a4c] hover:-translate-y-1 hover:scale-105"
                 >
                   Close
                 </button>
                 <a
                   href="mailto:rajendraabhyasa09@gmail.com"
-                  className="flex-1 px-4 py-2 bg-[#00ffea] text-[#0e1111] rounded-lg font-medium hover:bg-[#00b8d4] transition-colors"
+                  className="flex-1 px-4 py-2 bg-[#00ffea] text-[#0e1111] rounded-lg font-medium transition-all duration-300 hover:bg-[#00b8d4] hover:-translate-y-1 hover:scale-105 hover:shadow-lg hover:shadow-[#00ffea]/25"
                 >
                   Open Email App
                 </a>
@@ -127,11 +127,11 @@ export default function Home() {
       )}
 
       {/* Hero Section */}
-      <section id="hero" className="container mx-auto h-screen relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 h-full items-center gap-8 px-6">
+      <section id="hero" className="container mx-auto min-h-screen relative z-10 py-0 overflow-visible">
+        <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen items-center gap-8 px-6 relative">
           
           {/* Left Section - Lower z-index */}
-          <div className="lg:col-span-6 relative z-10">
+          <div className="lg:col-span-7 relative z-10">
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-2 flex-wrap">
                 <h1 className="text-3xl md:text-4xl text-white font-bold">bisa jadi</h1>
@@ -148,49 +148,77 @@ export default function Home() {
                   rotationInterval={2500}
                   />
               </div>
-              <div className="flex flex-col items-start">
-                <SplitText 
-                  text="halooooooo!"
-                  className="text-5xl md:text-6xl font-black text-start text-[#00ffea]"
-                  delay={50}
-                  duration={0.6}
-                  ease="power3.out"
-                  splitType="chars"
-                  from={{ opacity: 0, y: 40 }}
-                  to={{ opacity: 1, y: 0 }}
-                  threshold={0.1}
-                  rootMargin="100px"
-                  textAlign="left"
-                />
-                <SplitText 
-                  text="saya rajendra!"
-                  className="text-5xl md:text-6xl font-black text-start text-white"
-                  delay={75}
-                  duration={0.6}
-                  ease="power3.out"
-                  splitType="chars"
-                  from={{ opacity: 0, y: 40 }}
-                  to={{ opacity: 1, y: 0 }}
-                  threshold={0.1}
-                  rootMargin="100px"
-                  textAlign="left"
-                />
+              <div className="flex flex-col items-start w-full overflow-visible mb-4">
+                <div className="overflow-visible w-full">
+                  <SplitText 
+                    text="halooooooo!"
+                    className="text-4xl md:text-5xl lg:text-6xl font-black text-start text-[#00ffea] w-full leading-tight"
+                    delay={50}
+                    duration={0.6}
+                    ease="power3.out"
+                    splitType="chars"
+                    from={{ opacity: 0, y: 40 }}
+                    to={{ opacity: 1, y: 0 }}
+                    threshold={0.1}
+                    rootMargin="100px"
+                    textAlign="left"
+                  />
+                </div>
+                <div className="overflow-visible w-full -mt-2">
+                  <SplitText 
+                    text="saya rajendra!"
+                    className="text-4xl md:text-5xl lg:text-6xl font-black text-start text-white w-full leading-tight"
+                    delay={75}
+                    duration={0.6}
+                    ease="power3.out"
+                    splitType="chars"
+                    from={{ opacity: 0, y: 40 }}
+                    to={{ opacity: 1, y: 0 }}
+                    threshold={0.1}
+                    rootMargin="100px"
+                    textAlign="left"
+                  />
+                </div>
               </div>
               
               {/* Simple CTA */}
               <div className="flex gap-4 mt-6">
-                <a href="#projects" className="bg-[#00ffea] text-[#0e1111] px-6 py-3 rounded-lg font-bold hover:bg-white transition-colors">
+                <a href="#projects" className="bg-[#00ffea] text-[#0e1111] px-6 py-3 rounded-lg font-bold transition-all duration-300 hover:bg-white hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:shadow-[#00ffea]/25">
                   Lihat Project
                 </a>
-                <Link href="/experiences" className="border-2 border-[#00ffea] text-[#00ffea] px-6 py-3 rounded-lg font-bold hover:bg-[#00ffea] hover:text-[#0e1111] transition-colors">
+                <Link href="/experiences" className="border-2 border-[#00ffea] text-[#00ffea] px-6 py-3 rounded-lg font-bold transition-all duration-300 hover:bg-[#00ffea] hover:text-[#0e1111] hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:shadow-[#00ffea]/25">
                   Experiences
                 </Link>
+              </div>
+              
+              {/* Scroll indicator */}
+              <div className="overflow-visible w-full mt-4">
+                <SplitText 
+                  text="scroll kebawah!"
+                  className="text-4xl md:text-5xl lg:text-6xl font-black text-start text-white w-full leading-tight"
+                  delay={100}
+                  duration={0.6}
+                  ease="power3.out"
+                  splitType="chars"
+                  from={{ opacity: 0, y: 40 }}
+                  to={{ opacity: 1, y: 0 }}
+                  threshold={0.1}
+                  rootMargin="100px"
+                  textAlign="left"
+                />
               </div>
             </div>
           </div>
 
-          {/* Right Section - Higher z-index for Lanyard */}
-          <div className="lg:col-span-6 flex justify-center relative z-20">
+          {/* Right Section - Placeholder for layout */}
+          <div className="lg:col-span-5 relative z-10">
+            {/* Empty space for layout balance */}
+          </div>
+        </div>
+
+        {/* Lanyard Overlay - Covers entire hero section */}
+        <div className="absolute inset-0 flex justify-end items-start z-50 pointer-events-none pr-6 lg:pr-12">
+          <div className="w-1/3 lg:w-2/5 h-full flex justify-center pointer-events-auto">
             <Lanyard position={[0, 0, 25]} gravity={[0, -40, 0]} />
           </div>
         </div>
@@ -248,7 +276,7 @@ export default function Home() {
           <div className="col-span-12 lg:col-span-10 lg:col-start-2">
             <h2 className="text-4xl md:text-5xl font-bold text-[#00ffea] mb-12 text-center">Skills & Tools</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-[#1a1f20] p-6 md:p-8 rounded-lg border border-[#414a4c] hover:border-[#00ffea]/50 transition-colors">
+              <div className="bg-[#1a1f20] p-6 md:p-8 rounded-lg border border-[#414a4c] transition-all duration-300 hover:border-[#00ffea]/50 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:shadow-[#00ffea]/10">
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Frontend</h3>
                 <ul className="text-gray-300 space-y-2">
                   <li>React & Next.js</li>
@@ -256,14 +284,14 @@ export default function Home() {
                   <li>Tailwind CSS</li>
                 </ul>
               </div>
-              <div className="bg-[#1a1f20] p-6 md:p-8 rounded-lg border border-[#414a4c] hover:border-[#00ffea]/50 transition-colors">
+              <div className="bg-[#1a1f20] p-6 md:p-8 rounded-lg border border-[#414a4c] transition-all duration-300 hover:border-[#00ffea]/50 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:shadow-[#00ffea]/10">
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Backend</h3>
                 <ul className="text-gray-300 space-y-2">
                   <li>Node.js</li>
                   <li>Python</li>
                 </ul>
               </div>
-              <div className="bg-[#1a1f20] p-6 md:p-8 rounded-lg border border-[#414a4c] hover:border-[#00ffea]/50 transition-colors">
+              <div className="bg-[#1a1f20] p-6 md:p-8 rounded-lg border border-[#414a4c] transition-all duration-300 hover:border-[#00ffea]/50 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:shadow-[#00ffea]/10">
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Tools</h3>
                 <ul className="text-gray-300 space-y-2">
                   <li>Git & GitHub</li>
@@ -284,7 +312,7 @@ export default function Home() {
           <div className="col-span-12 lg:col-span-10 lg:col-start-2">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center">Recent Projects</h2>
             <div className="space-y-12">
-              <div className="bg-gradient-to-r from-[#1a1f20] to-[#252b2c] p-6 md:p-8 rounded-lg border border-[#414a4c] hover:border-[#00ffea]/50 transition-all duration-300">
+              <div className="bg-gradient-to-r from-[#1a1f20] to-[#252b2c] p-6 md:p-8 rounded-lg border border-[#414a4c] transition-all duration-300 hover:border-[#00ffea]/50 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:shadow-[#00ffea]/10">
                 <h3 className="text-2xl md:text-3xl font-bold text-[#00ffea] mb-4">Roblox Game Development Group</h3>
                 <p className="text-gray-300 text-base md:text-lg mb-6">
                   Founded a Roblox game development group called "3 am studio". Focused on recreating actual places into Roblox games. We've had few projects published, can be found under the "Experiences" tab under the group. Check it out!
@@ -293,11 +321,11 @@ export default function Home() {
                   <span className="px-3 py-1 bg-[#414a4c] text-white rounded-full text-sm">Lua</span>
                 </div>
                 <div className="flex gap-4">
-                  <a href="https://www.roblox.com/communities/11904571/3-am-studio#!/about" target="_blank" className="text-[#00ffea] hover:underline font-medium">View on Roblox →</a>
+                  <a href="https://www.roblox.com/communities/11904571/3-am-studio#!/about" target="_blank" className="text-[#00ffea] hover:underline font-medium transition-all duration-300 hover:-translate-y-1">View on Roblox →</a>
                 </div>
               </div>
               
-              <div className="bg-gradient-to-r from-[#1a1f20] to-[#252b2c] p-6 md:p-8 rounded-lg border border-[#414a4c] hover:border-[#00ffea]/50 transition-all duration-300">
+              <div className="bg-gradient-to-r from-[#1a1f20] to-[#252b2c] p-6 md:p-8 rounded-lg border border-[#414a4c] transition-all duration-300 hover:border-[#00ffea]/50 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:shadow-[#00ffea]/10">
                 <h3 className="text-2xl md:text-3xl font-bold text-[#00ffea] mb-4">Portofolio Website</h3>
                 <p className="text-gray-300 text-base md:text-lg mb-6">
                   This website also includes as one of my personal projects. Built with Next.js, React, and Three.js for the 3D effects.
@@ -308,8 +336,8 @@ export default function Home() {
                   <span className="px-3 py-1 bg-[#414a4c] text-white rounded-full text-sm">Next.js</span>
                 </div>
                 <div className="flex gap-4">
-                  <a href="#" className="text-[#00ffea] hover:underline font-medium">View Live →</a>
-                  <a href="https://github.com/gazingshoes/portofolio_project" target="_blank" className="text-[#00ffea] hover:text-white font-medium">GitHub →</a>
+                  <a href="#" className="text-[#00ffea] hover:underline font-medium transition-all duration-300 hover:-translate-y-1">View Live →</a>
+                  <a href="https://github.com/gazingshoes/portofolio_project" target="_blank" className="text-[#00ffea] hover:text-white font-medium transition-all duration-300 hover:-translate-y-1">GitHub →</a>
                 </div>
               </div>
             </div>
@@ -330,11 +358,11 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row justify-center gap-6">
                 <button 
                   onClick={handleEmailClick}
-                  className="bg-[#00ffea] text-[#0e1111] px-8 py-3 rounded-lg font-bold text-lg hover:bg-white transition-colors"
+                  className="bg-[#00ffea] text-[#0e1111] px-8 py-3 rounded-lg font-bold text-lg transition-all duration-300 hover:bg-white hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:shadow-[#00ffea]/25"
                 >
                   Copy Email
                 </button>
-                <a href="https://www.linkedin.com/in/rajendracahyono" target="_blank" className="border-2 border-[#00ffea] text-[#00ffea] px-8 py-3 rounded-lg font-bold text-lg hover:bg-[#00ffea] hover:text-[#0e1111] transition-colors">
+                <a href="https://www.linkedin.com/in/rajendracahyono" target="_blank" className="border-2 border-[#00ffea] text-[#00ffea] px-8 py-3 rounded-lg font-bold text-lg transition-all duration-300 hover:bg-[#00ffea] hover:text-[#0e1111] hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:shadow-[#00ffea]/25">
                   LinkedIn
                 </a>
               </div>
