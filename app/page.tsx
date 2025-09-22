@@ -127,8 +127,8 @@ export default function Home() {
       )}
 
       {/* Hero Section */}
-      <section id="hero" className="container mx-auto min-h-screen relative z-10 py-0 overflow-visible">
-        <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen items-center gap-8 px-6 relative">
+      <section id="hero" className="min-h-screen relative z-10 py-0 overflow-visible">
+        <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen items-center gap-8 px-12 relative">
           
           {/* Left Section - Lower z-index */}
           <div className="lg:col-span-7 relative z-10">
@@ -148,7 +148,7 @@ export default function Home() {
                   rotationInterval={2500}
                   />
               </div>
-              <div className="flex flex-col items-start w-full overflow-visible mb-4">
+              <div className="flex flex-col items-start w-full overflow-visible">
                 <div className="overflow-visible w-full">
                   <SplitText 
                     text="halooooooo!"
@@ -164,7 +164,7 @@ export default function Home() {
                     textAlign="left"
                   />
                 </div>
-                <div className="overflow-visible w-full -mt-2">
+                <div className="overflow-visible w-full -mt-4">
                   <SplitText 
                     text="saya rajendra!"
                     className="text-4xl md:text-5xl lg:text-6xl font-black text-start text-white w-full leading-tight"
@@ -182,7 +182,7 @@ export default function Home() {
               </div>
               
               {/* Simple CTA */}
-              <div className="flex gap-4 mt-6">
+              <div className="flex gap-4 mt-2">
                 <a href="#projects" className="bg-[#00ffea] text-[#0e1111] px-6 py-3 rounded-lg font-bold transition-all duration-300 hover:bg-white hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:shadow-[#00ffea]/25">
                   Lihat Project
                 </a>
@@ -193,19 +193,6 @@ export default function Home() {
               
               {/* Scroll indicator */}
               <div className="overflow-visible w-full mt-4">
-                <SplitText 
-                  text="scroll kebawah!"
-                  className="text-4xl md:text-5xl lg:text-6xl font-black text-start text-white w-full leading-tight"
-                  delay={100}
-                  duration={0.6}
-                  ease="power3.out"
-                  splitType="chars"
-                  from={{ opacity: 0, y: 40 }}
-                  to={{ opacity: 1, y: 0 }}
-                  threshold={0.1}
-                  rootMargin="100px"
-                  textAlign="left"
-                />
               </div>
             </div>
           </div>
@@ -336,7 +323,7 @@ export default function Home() {
                   <span className="px-3 py-1 bg-[#414a4c] text-white rounded-full text-sm">Next.js</span>
                 </div>
                 <div className="flex gap-4">
-                  <a href="#" className="text-[#00ffea] hover:underline font-medium transition-all duration-300 hover:-translate-y-1">View Live →</a>
+                  <a href="https://portofolio-rajendra.vercel.app/" target="_blank" className="text-[#00ffea] hover:underline font-medium transition-all duration-300 hover:-translate-y-1">View Live →</a>
                   <a href="https://github.com/gazingshoes/portofolio_project" target="_blank" className="text-[#00ffea] hover:text-white font-medium transition-all duration-300 hover:-translate-y-1">GitHub →</a>
                 </div>
               </div>
