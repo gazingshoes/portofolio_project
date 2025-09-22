@@ -114,12 +114,6 @@ export default function Home() {
                 >
                   Close
                 </button>
-                <a
-                  href="mailto:rajendraabhyasa09@gmail.com"
-                  className="flex-1 px-4 py-2 bg-[#00ffea] text-[#0e1111] rounded-lg font-medium transition-all duration-300 hover:bg-[#00b8d4] hover:-translate-y-1 hover:scale-105 hover:shadow-lg hover:shadow-[#00ffea]/25"
-                >
-                  Open Email App
-                </a>
               </div>
             </div>
           </div>
