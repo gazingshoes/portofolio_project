@@ -7,7 +7,6 @@ import RotatingText from "./components/RotatingText/RotatingText";
 import SplitText from "./components/SplitText/SplitText";
 import ScrollReveal from "./components/ScrollReveal/ScrollReveal";
 import Beams from "./components/Beams/Beams";
-import ClickSpark from "./components/ClickSpark/ClickSpark";
 
 export default function Home() {
   const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
@@ -71,7 +70,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">Get In Touch!</h3>
                 <p className="text-gray-300 text-sm mb-6">
-                  Halo! Gmail gw bisa di copy ya, kabarin aja kalo mau tanya-tanya!
+                  Ready to collaborate? Copy my email address below and let's create something amazing together!
                 </p>
               </div>
 
@@ -106,6 +105,16 @@ export default function Home() {
                     )}
                   </button>
                 </div>
+              </div>
+
+              {/* Additional Info */}
+              <div className="text-left bg-[#00ffea]/5 border border-[#00ffea]/20 rounded-lg p-4 mb-6">
+                <h4 className="text-[#00ffea] font-semibold text-sm mb-2">What to expect:</h4>
+                <ul className="text-gray-300 text-xs space-y-1">
+                  <li>• Response within 24 hours</li>
+                  <li>• Open to discuss projects, collaborations, or just tech talks</li>
+                  <li>• Available for freelance work and partnerships</li>
+                </ul>
               </div>
 
               {/* Action Buttons */}
@@ -334,7 +343,7 @@ export default function Home() {
                   onClick={handleEmailClick}
                   className="bg-[#00ffea] text-[#0e1111] px-8 py-3 rounded-lg font-bold text-lg hover:bg-white transition-colors"
                 >
-                  Contact Me
+                  Copy Email
                 </button>
                 <a href="https://www.linkedin.com/in/rajendracahyono" target="_blank" className="border-2 border-[#00ffea] text-[#00ffea] px-8 py-3 rounded-lg font-bold text-lg hover:bg-[#00ffea] hover:text-[#0e1111] transition-colors">
                   LinkedIn
