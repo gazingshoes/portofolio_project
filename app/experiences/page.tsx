@@ -52,7 +52,7 @@ export default function Experiences() {
           <div className="w-full flex justify-center">
             <div className="max-w-3xl text-center">
               <BlurText
-                text="Maaf! Gw belum ada work experiences."
+                text="Maaf! Saya belum ada pengalaman kerja."
                 delay={50}
                 animateBy="words"
                 direction="top"
@@ -135,7 +135,7 @@ export default function Experiences() {
         <div className="text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-[#00ffea] mb-8">Let's Build Something Amazing</h2>
           <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Meskipun experience gw belum banyak, gw selalu semangat buat belajar hal baru dan ngerjain project seru. Jangan ragu buat reach out ya!
+            Meskipun experience saya belum banyak, saya selalu semangat buat belajar hal baru dan ngerjain project seru. Jangan ragu buat reach out ya!
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <Link href="/#contact" className="bg-[#00ffea] text-[#0e1111] px-8 py-3 rounded-lg font-bold text-lg hover:bg-white transition-colors">

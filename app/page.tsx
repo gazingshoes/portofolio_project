@@ -70,7 +70,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">Get In Touch!</h3>
                 <p className="text-gray-300 text-sm mb-6">
-                  Ready to collaborate? Copy my email address below and let's create something amazing together!
+                  Halo! Gmail gw bisa langsung di copy ya, kalo mau tanya-tanya bisa ke situ aja!
                 </p>
               </div>
 
@@ -106,17 +106,6 @@ export default function Home() {
                   </button>
                 </div>
               </div>
-
-              {/* Additional Info */}
-              <div className="text-left bg-[#00ffea]/5 border border-[#00ffea]/20 rounded-lg p-4 mb-6">
-                <h4 className="text-[#00ffea] font-semibold text-sm mb-2">What to expect:</h4>
-                <ul className="text-gray-300 text-xs space-y-1">
-                  <li>• Response within 24 hours</li>
-                  <li>• Open to discuss projects, collaborations, or just tech talks</li>
-                  <li>• Available for freelance work and partnerships</li>
-                </ul>
-              </div>
-
               {/* Action Buttons */}
               <div className="flex gap-3">
                 <button
@@ -145,7 +134,7 @@ export default function Home() {
           <div className="lg:col-span-6 relative z-10">
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-2 flex-wrap">
-                <h1 className="text-3xl md:text-4xl text-white font-bold">gw udah muak jadi</h1>
+                <h1 className="text-3xl md:text-4xl text-white font-bold">bisa jadi</h1>
                 <RotatingText 
                   texts={['frontend', 'backend', 'fullstack', 'developer']}
                   mainClassName="px-2 sm:px-2 md:px-3 bg-gradient-to-r from-[#00ffea] to-[#00b8d4] text-[#0e1111] overflow-hidden py-0.5 sm:py-1 justify-center rounded-lg text-xl md:text-2xl font-bold inline-flex transition-all"
@@ -174,7 +163,7 @@ export default function Home() {
                   textAlign="left"
                 />
                 <SplitText 
-                  text="kenalin, gw rajendra!"
+                  text="saya rajendra!"
                   className="text-5xl md:text-6xl font-black text-start text-white"
                   delay={75}
                   duration={0.6}
@@ -234,7 +223,7 @@ export default function Home() {
               rotationEnd="bottom bottom-=20%"
               wordAnimationEnd="bottom bottom-=20%"
             >
-              Halo, gw Rajendra, mahasiswa baru UNESA dari prodi Sains Data. Gw suka ngoding sih, cuman kurang suka kalo belajar matematika. Pengalaman ngoding gw sih ngga banyak, gw pernah ngerjain project Web Development, Game Development, personal projects juga sering, portofolio ini lah salah satunya.
+              Halo, saya Rajendra, mahasiswa baru UNESA dari prodi Sains Data. Saya suka ngoding sih, cuman kurang suka kalo belajar matematika. Pengalaman ngoding saya sih ngga banyak, saya pernah ngerjain project Web Development, Game Development, personal projects juga sering, portofolio ini lah salah satunya.
             </ScrollReveal>
             
             <ScrollReveal
@@ -247,7 +236,7 @@ export default function Home() {
               rotationEnd="bottom bottom-=30%"
               wordAnimationEnd="bottom bottom-=30%"
             >
-              Selain coding, gw juga suka explore teknologi baru, contribute ke open source, dan berbagi knowledge dengan komunitas developer Indonesia.
+              Selain coding, saya juga suka explore teknologi baru, contribute ke open source, dan berbagi knowledge dengan teman-teman sebidang juga.
             </ScrollReveal>
           </div>
         </div>
@@ -336,7 +325,7 @@ export default function Home() {
               <h2 className="text-4xl md:text-5xl font-bold text-[#00ffea] mb-8">Let's Work Together</h2>
               <p className="text-lg md:text-xl text-gray-300 mb-12 leading-relaxed">
                 Punya project menarik? Atau mau ngobrol-ngobrol tentang teknologi? 
-                Hit me up! Gw selalu excited untuk kolaborasi dan bikin sesuatu yang keren.
+                Hit me up! Saya selalu excited untuk kolaborasi dan bikin project yang kece.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-6">
                 <button 
