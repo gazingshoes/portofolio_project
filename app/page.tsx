@@ -1,7 +1,9 @@
 'use client';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import * as LucideIcons from "lucide-react";
+import { createClient } from '@/utils/supabase/client';
 import Lanyard from "./components/Lanyard/Lanyard";
 import RotatingText from "./components/RotatingText/RotatingText";
 import SplitText from "./components/SplitText/SplitText";
@@ -11,6 +13,16 @@ import Beams from "./components/Beams/Beams";
 export default function Home() {
   const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
   const [copySuccess, setCopySuccess] = useState(false);
+  
+  // Rating system state
+  const [rating, setRating] = useState(0);
+  const [hasRated, setHasRated] = useState(false);
+  const [averageRating, setAverageRating] = useState(4.2);
+  const [totalRatings, setTotalRatings] = useState(15);
+  const [loading, setLoading] = useState(false);
+  
+  // Icons
+  const Star = LucideIcons.Star;
 
   const handleEmailClick = () => {
     setIsEmailModalOpen(true);
@@ -29,6 +41,76 @@ export default function Home() {
   const closeModal = () => {
     setIsEmailModalOpen(false);
     setCopySuccess(false);
+  };
+
+  // Load ratings from Supabase when component mounts
+  useEffect(() => {
+    const loadRatings = async () => {
+      try {
+        const supabase = createClient();
+        const { data: ratings, error } = await supabase
+          .from('portfolio_ratings')
+          .select('rating');
+        
+        if (error) {
+          console.error('Error loading ratings:', error);
+          return;
+        }
+        
+        if (ratings && ratings.length > 0) {
+          const total = ratings.length;
+          const sum = ratings.reduce((acc, curr) => acc + curr.rating, 0);
+          const avg = sum / total;
+          
+          setAverageRating(Number(avg.toFixed(1)));
+          setTotalRatings(total);
+        }
+      } catch (error) {
+        console.error('Failed to load ratings:', error);
+      }
+    };
+    
+    loadRatings();
+  }, []);
+
+  const handleRating = async (star: number) => {
+    if (!hasRated && !loading) {
+      setLoading(true);
+      setRating(star);
+      setHasRated(true);
+      
+      try {
+        const supabase = createClient();
+        const { error } = await supabase
+          .from('portfolio_ratings')
+          .insert([
+            {
+              rating: star,
+              user_agent: typeof navigator !== 'undefined' ? navigator.userAgent : 'unknown'
+            }
+          ]);
+        
+        if (error) {
+          console.error('Error saving rating:', error);
+          // Revert state if there was an error
+          setHasRated(false);
+          setRating(0);
+        } else {
+          // Update UI with new rating
+          const newTotal = totalRatings + 1;
+          const newAverage = ((averageRating * totalRatings) + star) / newTotal;
+          setAverageRating(Number(newAverage.toFixed(1)));
+          setTotalRatings(newTotal);
+        }
+      } catch (error) {
+        console.error('Error saving rating:', error);
+        // Revert state if there was an error
+        setHasRated(false);
+        setRating(0);
+      } finally {
+        setLoading(false);
+      }
+    }
   };
 
   return (
@@ -321,6 +403,75 @@ export default function Home() {
                   <a href="https://github.com/gazingshoes/portofolio_project" target="_blank" className="text-[#00ffea] hover:text-white font-medium transition-all duration-300 hover:-translate-y-1">GitHub →</a>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Rating Section */}
+      <section id="rating" className="container mx-auto py-32 relative z-10 px-6">
+        <div className="grid grid-cols-12 gap-8">
+          <div className="col-span-12 lg:col-span-8 lg:col-start-3">
+            <div className="bg-[#1a1f20] p-8 rounded-lg border border-[#414a4c] text-center">
+              <h2 className="text-4xl md:text-5xl font-bold text-[#00ffea] mb-4">Rate My Portfolio!</h2>
+              <p className="text-gray-300 mb-6">Gimana portofolio saya? Mohon berikan rating ya, agar saya bisa terus mengembangkan portofolio ini!</p>
+              
+              {/* Current Rating Display */}
+              <div className="mb-6">
+                <div className="flex justify-center items-center gap-2 mb-2">
+                  <div className="flex items-center">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <Star
+                        key={star}
+                        size={20}
+                        className={`${
+                          star <= Math.floor(averageRating) 
+                            ? 'text-yellow-400 fill-current' 
+                            : 'text-gray-400'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                  <span className="text-white font-semibold">
+                    {averageRating}
+                  </span>
+                </div>
+                <p className="text-gray-400 text-sm">Berdasarkan {totalRatings} reviews</p>
+              </div>
+
+              {/* Interactive Rating */}
+              {!hasRated ? (
+                <div>
+                  <p className="text-gray-300 mb-4">Klik bintangnya untuk rate:</p>
+                  <div className="flex justify-center gap-2 mb-4">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <button
+                        key={star}
+                        onClick={() => handleRating(star)}
+                        disabled={loading}
+                        className={`transition-all duration-200 hover:scale-110 ${loading ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'}`}
+                      >
+                        <Star
+                          size={32}
+                          className={`${
+                            star <= rating 
+                              ? 'text-yellow-400 fill-current' 
+                              : 'text-gray-400 hover:text-yellow-200'
+                          }`}
+                        />
+                      </button>
+                    ))}
+                  </div>
+                  {loading && (
+                    <p className="text-[#00ffea] text-sm">Menyimpan rating...</p>
+                  )}
+                </div>
+              ) : (
+                <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+                  <h3 className="text-green-400 font-semibold mb-2">Terimakasih atas ratingnya!</h3>
+                  <p className="text-gray-300">Kamu rating portofolio ini {rating} bintang</p>
+                </div>
+              )}
             </div>
           </div>
         </div>
