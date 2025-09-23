@@ -130,7 +130,7 @@ export default function Home() {
               <div className="flex items-center gap-2 flex-wrap">
                 <h1 className="text-3xl md:text-4xl text-white font-bold">bisa jadi</h1>
                 <RotatingText 
-                  texts={['frontend', 'backend', 'fullstack', 'developer']}
+                  texts={['frontend', 'backend', 'fullstack']}
                   mainClassName="px-2 sm:px-2 md:px-3 bg-gradient-to-r from-[#00ffea] to-[#00b8d4] text-[#0e1111] overflow-hidden py-0.5 sm:py-1 justify-center rounded-lg text-xl md:text-2xl font-bold inline-flex transition-all"
                   staggerFrom={"last"}
                   initial={{ y: "100%" }}
