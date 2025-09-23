@@ -200,7 +200,7 @@ export default function Home() {
         {/* Lanyard Overlay - Covers entire hero section */}
         <div className="absolute inset-0 flex justify-end items-start z-50 pointer-events-none pr-6 lg:pr-12">
           <div className="w-1/3 lg:w-2/5 h-full flex justify-center pointer-events-auto">
-            <Lanyard position={[0, 0, 25]} gravity={[0, -40, 0]} />
+            <Lanyard position={[0, 0, 20]} gravity={[0, -50, 0]} />
           </div>
         </div>
       </section>

@@ -6,12 +6,12 @@ import Beams from "../components/Beams/Beams";
 
 export default function Experiences() {
   const ArrowLeft = LucideIcons.ArrowLeft;
+  const ArrowRight = LucideIcons.ArrowRight;
   
   return (
     <div className="overflow-x-hidden bg-[#0e1111] scroll-smooth min-h-screen">
-      {/* Background Beams - you might want to import this component */}
+      {/* Background Beams */}
       <div className="fixed top-0 right-0 left-0 bottom-0 w-full h-full opacity-30">
-
         <Beams
           beamWidth={2}
           beamHeight={15}
@@ -22,10 +22,9 @@ export default function Experiences() {
           scale={0.2}
           rotation={0}
         />
-
       </div>
 
-      {/* headern */}
+      {/* Header */}
       <header className="container mx-auto relative z-10 px-6 py-8">
         <Link 
           href="/" 
@@ -36,7 +35,7 @@ export default function Experiences() {
         </Link>
       </header>
 
-      {/* title mungkin */}
+      {/* Title */}
       <section className="container mx-auto relative z-10 px-6 py-16">
         <div className="text-center mb-16">
           <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', marginBottom: '1rem'}}>
@@ -64,7 +63,7 @@ export default function Experiences() {
         </div>
       </section>
 
-      {/* educations */}
+      {/* Educations */}
       <section className="container mx-auto relative z-10 px-6 py-16">
         <div className="grid grid-cols-12 gap-8">
           <div className="col-span-12 lg:col-span-10 lg:col-start-2">
@@ -76,7 +75,7 @@ export default function Experiences() {
                 <h4 className="text-lg text-white mb-2">Jurusan MIPA</h4>
                 <p className="text-gray-400 mb-4">2022 - 2025</p>
                 <p className="text-gray-300">
-                  Belajar di SMAN 1 Kota Serang di jurusan MIPA. Also had experience in the student council, being in the IT Division.
+                  Belajar di SMAN 1 Kota Serang di jurusan MIPA. Also had experience in the student council, in the IT Division.
                 </p>
               </div>
               
@@ -93,41 +92,50 @@ export default function Experiences() {
         </div>
       </section>
 
-      {/* personal projects */}
-    <section className="container mx-auto relative z-10 px-6 py-16">
-      <div className="grid grid-cols-12 gap-8">
-        <div className="col-span-12 lg:col-span-10 lg:col-start-2">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center">Personal Projects</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-gradient-to-r from-[#1a1f20] to-[#252b2c] p-6 rounded-lg border border-[#414a4c] transition-all duration-300 hover:border-[#00ffea]/50 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:shadow-[#00ffea]/10">
-              <h3 className="text-xl font-bold text-[#00ffea] mb-3">Roblox Game Developer</h3>
-              <p className="text-gray-400 text-sm mb-3">2020 - Present</p>
-              <p className="text-gray-300 mb-4">
-                Started with my only private project, then founded a Group, called "3 am studio" as a small Roblox Game Dev Studio. Have 3 games published with thousands of visits.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span className="px-2 py-1 bg-[#414a4c] text-white rounded text-xs">Lua</span>
+      {/* Personal Projects */}
+      <section className="container mx-auto relative z-10 px-6 py-16">
+        <div className="grid grid-cols-12 gap-8">
+          <div className="col-span-12 lg:col-span-10 lg:col-start-2">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center">Personal Projects</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Roblox Project Card */}
+              <div className="bg-gradient-to-r from-[#1a1f20] to-[#252b2c] p-6 rounded-lg border border-[#414a4c] transition-all duration-300 hover:border-[#00ffea]/50 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:shadow-[#00ffea]/10">
+                <h3 className="text-xl font-bold text-[#00ffea] mb-3">Roblox Game Developer</h3>
+                <p className="text-gray-400 text-sm mb-3">2020 - Present</p>
+                <p className="text-gray-300 mb-4">
+                  Started with my only private project, then founded a Group, called "3 am studio" as a small Roblox Game Dev Studio. Have 3 games published with thousands of visits.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-2 py-1 bg-[#414a4c] text-white rounded text-xs">Lua</span>
+                </div>
+                <Link 
+                  href="/projects/roblox-development"
+                  className="inline-flex items-center gap-2 text-[#00ffea] hover:text-white font-medium transition-all duration-300 hover:-translate-y-1"
+                >
+                  Learn More
+                  <ArrowRight size={16} />
+                </Link>
               </div>
-            </div>
-    
-            <div className="bg-gradient-to-r from-[#1a1f20] to-[#252b2c] p-6 rounded-lg border border-[#414a4c] transition-all duration-300 hover:border-[#00ffea]/50 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:shadow-[#00ffea]/10">
-              <h3 className="text-xl font-bold text-[#00ffea] mb-3">This Portofolio</h3>
-              <p className="text-gray-400 text-sm mb-3">2025</p>
-              <p className="text-gray-300 mb-4">
-                This portofolio counts as one of my personal projects. Built with Next.js, React, and Three.js for the 3D effects.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span className="px-2 py-1 bg-[#414a4c] text-white rounded text-xs">React</span>
-                <span className="px-2 py-1 bg-[#414a4c] text-white rounded text-xs">TypeScript</span>
-                <span className="px-2 py-1 bg-[#414a4c] text-white rounded text-xs">Tailwind CSS</span>
-                <span className="px-2 py-1 bg-[#414a4c] text-white rounded text-xs">Next.js</span>
+
+              {/* Portfolio Project Card */}
+              <div className="bg-gradient-to-r from-[#1a1f20] to-[#252b2c] p-6 rounded-lg border border-[#414a4c] transition-all duration-300 hover:border-[#00ffea]/50 hover:-translate-y-2 hover:scale-105 hover:shadow-lg hover:shadow-[#00ffea]/10">
+                <h3 className="text-xl font-bold text-[#00ffea] mb-3">This Portofolio</h3>
+                <p className="text-gray-400 text-sm mb-3">2025</p>
+                <p className="text-gray-300 mb-4">
+                  This portofolio counts as one of my personal projects. Built with Next.js, React, and Three.js for the 3D effects.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-2 py-1 bg-[#414a4c] text-white rounded text-xs">React</span>
+                  <span className="px-2 py-1 bg-[#414a4c] text-white rounded text-xs">TypeScript</span>
+                  <span className="px-2 py-1 bg-[#414a4c] text-white rounded text-xs">Tailwind CSS</span>
+                  <span className="px-2 py-1 bg-[#414a4c] text-white rounded text-xs">Next.js</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       {/* Call to Action */}
       <section className="container mx-auto relative z-10 px-6 py-16">
